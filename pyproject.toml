@@ -1,0 +1,35 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "idos"
+version = "0.1.0"
+description = "Search Czech multi-modal transport (trains, buses, MHD, ferries) on idos.cz from the command line."
+keywords = ["idos", "trains", "buses", "mhd", "czech-transport", "scraper", "cli"]
+authors = [
+  { name = "Filip Dusek", email = "FilipDusek@users.noreply.github.com" },
+]
+license = { text = "MIT" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "typer>=0.9",
+    "rich>=13.0",
+    "pyrate-limiter>=3.0",
+    "filelock>=3.0",
+]
+
+[project.scripts]
+idos = "idos.cli:_entrypoint"
+
+[project.urls]
+Source = "https://github.com/FilipDusek/idos"
+
+[tool.flit.module]
+name = "idos"
